@@ -1,0 +1,1 @@
+to contribute to this project you need to understand the project and get ready for difference change 

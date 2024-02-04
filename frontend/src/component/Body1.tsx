@@ -1,7 +1,7 @@
 import "./body.css"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
-import {faFacebook,faWhatsapp,faInstagram,faXTwitter} from '@fortawesome/free-brands-svg-icons'
-import {faBars,faChevronRight} from "@fortawesome/free-solid-svg-icons"
+// import {faFacebook,faWhatsapp,faInstagram,faXTwitter} from '@fortawesome/free-brands-svg-icons'
+import {faChevronRight} from "@fortawesome/free-solid-svg-icons"
 function Body1() {
   return (
   <div className="element md:mt-20 mt-12">

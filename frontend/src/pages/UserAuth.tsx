@@ -1,7 +1,7 @@
 import {useState,useEffect} from 'react'
 
 function UserAuth() {
-  const [datas,setData] = useState("Kalibe")
+  // const [datas,setData] = useState("Kalibe")
   const [isloaded,setIsloaded]=useState(false);
   useEffect(()=>{
       setTimeout(() => {
@@ -22,7 +22,7 @@ function UserAuth() {
   return (
     <div>
          <div className="mt-28 md:mx-10 px-2">
-        <h3 className="text-4xl font-bold mx-2">Welcome {datas}</h3>
+        <h3 className="text-4xl font-bold mx-2">Welcome kalibe</h3>
         <div className="flex justify-center w-full mx-2 border h-[50vh] bg-gray-300 my-4">
           <div></div>
         </div>

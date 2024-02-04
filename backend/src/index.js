@@ -3,18 +3,22 @@ const dotenv = require("dotenv").config()
 const cors = require("cors")
 const errorHandler=require("./middlewares/errorHandler")
 const router = require("./routes/userRoutes")
+const connectDb = require("./config/dbConfig")
 const app=express()
 // +++++++++++++ the express middleware ++++++++++++
 const port =process.env.PORT || 3000
+connectDb()
 
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 app.use(
     cors({
-        origin:"http://localhost:5173",
+        origin:"http://localhost:5173 ",
         Credential:true
     })
 )
+
+
 
 app.use("/api/user",router)
 

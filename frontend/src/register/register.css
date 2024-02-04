@@ -1,7 +1,11 @@
 .form label{
     font-size: 20px;
     font-weight: 500;
-    margin: 4px 0;
+    margin: 2px 0;
+}
+.form input{
+    /* border-bottom: 1px solid gray; */
+    box-shadow: 1px 3px 1px gray;
 }
 .form h2{
     font-weight: bold;

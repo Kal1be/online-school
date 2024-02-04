@@ -1,6 +1,6 @@
 const express =require("express")
 const router=express.Router()
-const {getContact,postContact,deleteContact,updateContact,getById} =require("../controller/userController")
+const {getContact,postContact,deleteContact,updateContact,getById} = require("../controller/userController")
 
 
 router.route("/").get(getContact).post(postContact)

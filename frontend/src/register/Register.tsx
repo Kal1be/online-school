@@ -1,20 +1,20 @@
 import Navbar from "../Navbar/Navbar"
 import {useState,useEffect} from "react"
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
+// import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import { redirect } from "react-router-dom"
 // import {faPaper} from "@fortawesome/free-solid-svg-icons"
 import axios from  "axios"
 import "./register.css"
 import Footer from "../Footer/Footer"
 function Register() {
-  const [data,setData]=useState("")
+  const [data,setData]=useState([])
   const [name,setName]=useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
   const handleSubmit=async (e:any)=>{
 e.preventDefault()
-await axios.post("http://localhost:5000/api/user",{name,email,password})
+await axios.post("http://localhost:5000/api/user",{email,password})
 .then(()=>{
   console.log("the data is succesfull to this endpoint")
  
@@ -24,7 +24,7 @@ redirect("/signin")
   }
   useEffect(()=>{
    axios.get("http://localhost:5000/api/user")
-   .then(res=>setData(res.data.message))
+   .then(res=>setData(res.data))
   },[data])
   return (
    <div>
@@ -65,7 +65,7 @@ redirect("/signin")
         </div>
 
         <div className="my-2">
-          <input type="checkbox" placeholder="checkbox"/> <span>Agree our condition {data}</span>
+          <input type="checkbox" placeholder="checkbox"/> <span>Agree our condition {data.map((user:any)=>{return(<div key={user._id}>{user.email}</div>)})}</span>
           </div>
         <button type="submit" className="border w-full mt-3 py-2 rounded-xl bg-[#023f89] text-xl text-white font-medium">Submit</button>
      </form>
